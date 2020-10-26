@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import Navbar from "./components/Navbar.js"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './components/css/App.css';
+
+
+const AppHandler = (function() {
+
+  const links = [
+    {name: 'Portfolio', url: 'https://www.josiaheakle.com'},
+    {name: 'Google', url: 'https://www.google.com'},
+  ]
+
+  return {
+    links: links,
+  }
+
+})();
+
+export default class App extends React.Component {
+  
+  render() {
+    return (
+      <div className="app">
+        <Navbar title='Josiah Eakle' links={AppHandler.links}/>
+      </div>
+    );
+  }
 }
-
-export default App;
