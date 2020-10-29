@@ -1,5 +1,6 @@
 .navbar {
 
+    position: fixed;
     width: 100vw;
     height: var(--navbar-height);
     color: var(--white);
@@ -10,22 +11,119 @@
 
 }
 
+/* Container to organize elements within */
 .navbar-container {
-    display: flex;
-    flex-direction: row;
-    /* justify-content: center;
-    align-content: center; */
+    display: grid;
+    width: 100%;
+    grid-template-rows: 100%;
+    grid-template-columns: 50% 50%;
+
 }
 
+/* Continer for the navbar buttons */
 .navbar-dropdown-items {
 
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
+    align-content: center;
+    justify-items: center;
+    padding-top: 6px;
+
 
 }
 
+
+
+/* Contains icons to round their border */
+.icon-container {
+    background-color: var(--dark-gray);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-right: 8px;
+}
+
+/* Changes brightness of icon button */
+.icon-container:hover {
+    filter: brightness(120%);
+
+}
+
+
+
+.search-container {
+    background-color: var(--dark-gray);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-right: 8px;
+    opacity: .9;
+}
+
+.search-container:hover {
+    filter: brightness(120%);
+
+}
+
+/* Each individual icon */
+.nav-icons {
+    align-self: center;
+    font-size: 36px;
+    width: 36px;
+    height: 36px;
+}
+
+/* The title of the navbar */
 .navbar-title {
     
+    align-self: center;
+
+}
+
+ @media only screen and (min-width: 750px) {
+
+    .navbar-title {
     
+        font-size: 2.5rem;
+    
+    }
+
+}
+
+@media only screen and (max-width: 749px) {
+
+    .navbar-title {
+        font-size: calc(100vw * 0.05)
+    }
+
+} 
+
+
+/* Contains menu opened from navbar dropdown items */
+.navbar-menu {
+
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+    right: 15%;
+    top: 60px;
+    border-radius: 4px;
+    color: var(--white);
+    background-color: var(--gray);
+
+
+}
+
+.navbar-menu-title {
+
+    align-self: center;
 
 }

@@ -4,9 +4,22 @@
   --light-gray: #ccc5b9;
   --gray: #403d39;
   --dark-gray: #252422;
+  --nav-icon-gray: #2e2c27;
+
   --orange: #eb5e28;
 
   --navbar-height: 64px;
+
+}
+
+html {
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  background-color: var(--light-gray) !important;
+  height: 200vh;
+  width: 100vw;
 
 }
 
