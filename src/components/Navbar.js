@@ -14,11 +14,16 @@ export default class Navbar extends React.Component {
             openMenu: false,
             openSearch: false,
             navbarMenuTitle: '',
+
+            searchValue: '',
         }
 
         this.startMenuTimeout = this.startMenuTimeout.bind(this)
         this.setMenuOpen = this.setMenuOpen.bind(this)
         this.setMenuClosed = this.setMenuClosed.bind(this)
+        this.updateSearchValue = this.updateSearchValue.bind(this)
+        this.handleSearchClick = this.handleSearchClick.bind(this)
+        this.openSearchMenu = this.openSearchMenu.bind(this)
     }
 
     startMenuTimeout() {
@@ -45,6 +50,32 @@ export default class Navbar extends React.Component {
         this.setState({openMenu: false})
     }
 
+    updateSearchValue(event) {
+        this.setState({
+            searchValue:event.target.value,
+        })
+    }
+
+    handleSearchClick(event) {
+        
+        if(this.state.openSearch === false) {
+            this.openSearchMenu(event);
+        } else {
+
+            //CALL SEARCH FROM HERE
+
+            this.setState({openSearch:false})
+        }
+
+    }
+
+
+    openSearchMenu(event) {
+        this.setState({
+            openSearch:true
+        })
+    }
+
 
     render() {
 
@@ -56,7 +87,7 @@ export default class Navbar extends React.Component {
                     <div className='navbar-dropdown-items'>
                         <NavbarIcon materialIconName='settings' clickAction={this.setMenuOpen} closeAction={this.setMenuClosed}/>
                         <NavbarIcon materialIconName='person' clickAction={this.setMenuOpen} closeAction={this.setMenuClosed}/>
-                        <NavbarSeach  />
+                        <NavbarSeach clickAction={ this.handleSearchClick } openSearchBar={this.state.openSearch} updateSearchValue={this.updateSearchValue}/>
                     </div>
                 </div>
                 {this.state.openMenu ? <NavbarMenu title={this.state.navbarMenuTitle} /> : null}

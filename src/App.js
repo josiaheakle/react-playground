@@ -22,7 +22,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Navbar title='Josiah Eakle' links={AppHandler.links}/>
+        <Navbar title='My App' links={AppHandler.links}/>
       </div>
     );
   }

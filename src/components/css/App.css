@@ -1,5 +1,17 @@
-.container {
-  margin-left: 15%;
-  margin-right: 15%;
-  width: 70%;
+@media only screen and (min-width: 600px) {
+  .container {
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+  }
+
 }
+
+@media only screen and (max-width: 599px) {
+  .container {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 84%;
+  }
+}
+

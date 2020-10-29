@@ -15,7 +15,7 @@ export default class NavbarIcon extends React.Component {
         const { materialIconName, clickAction } = this.props;
         return( 
             <span className='icon-container' onClick={clickAction}>
-                <i className='material-icons nav-icons'>{materialIconName}</i>
+                <a href='#' className='icon-button'><i className='material-icons nav-icons'>{materialIconName}</i></a>
             </span>
 
         );

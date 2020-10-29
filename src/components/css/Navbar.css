@@ -16,7 +16,7 @@
     display: grid;
     width: 100%;
     grid-template-rows: 100%;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 60%;
 
 }
 
@@ -63,7 +63,27 @@
     justify-content: center;
     align-content: center;
     margin-right: 8px;
-    opacity: .9;
+}
+
+.open-search-container {
+    width: 20vw;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+.search-icon-button {
+    position: relative;
+    /* left: 6px; */
+    height: 36px;
+    align-self: center;
+    justify-self: flex-end;
+    width: 36px;
+    padding-left: 5%;
+}
+
+.search-icon {
+    position: relative;
+    right: -26px;
 }
 
 .search-container:hover {
@@ -71,12 +91,38 @@
 
 }
 
+.search-input {
+    /* align-self: flex-end; */
+    align-self:center;
+    justify-self: center;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    height: 32px;
+    color: var(--white);
+    width: 10vw;
+
+}
+
+
+
 /* Each individual icon */
 .nav-icons {
     align-self: center;
     font-size: 36px;
     width: 36px;
     height: 36px;
+    color: var(--white);
+    font-size: 36px;
+}
+
+.icon-button {
+    height: 36px;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+    justify-self: center;
+    width: 36px;
 }
 
 /* The title of the navbar */
