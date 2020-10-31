@@ -7,6 +7,13 @@ import NavbarSeach from './NavbarSeach.js'
 import './css/Navbar.css'
 
 export default class Navbar extends React.Component {
+
+    // props
+    // searchCallAction - parent function sending searchValue
+    // title - title of nav
+
+
+
     constructor(props) {
         super(props);
 
@@ -15,7 +22,8 @@ export default class Navbar extends React.Component {
             openSearch: false,
             navbarMenuTitle: '',
 
-            searchValue: '',
+            searchValue: '',    
+            searchQuery: '',
         }
 
         this.startMenuTimeout = this.startMenuTimeout.bind(this)
@@ -23,7 +31,8 @@ export default class Navbar extends React.Component {
         this.setMenuClosed = this.setMenuClosed.bind(this)
         this.updateSearchValue = this.updateSearchValue.bind(this)
         this.handleSearchClick = this.handleSearchClick.bind(this)
-        this.openSearchMenu = this.openSearchMenu.bind(this)
+        // this.createResult = this.createResult.bind(this)
+        // this.openSearchMenu = this.openSearchMenu.bind(this)
     }
 
     startMenuTimeout() {
@@ -57,10 +66,27 @@ export default class Navbar extends React.Component {
     }
 
     handleSearchClick(event) {
+
+        const { searchCallAction } = this.props
+
         
         if(this.state.openSearch === false) {
-            this.openSearchMenu(event);
+            this.setState({
+                openSearch:true
+            })
         } else {
+            
+            this.setState({
+                searchQuery: this.state.searchValue,
+                searchValue: '',
+            })
+
+            setTimeout(() => {
+                searchCallAction(this.state.searchQuery)
+            }, 100)
+            // searchCallAction(this.state.searchQuery)
+
+            // this.createResult();
 
             //CALL SEARCH FROM HERE
 
@@ -70,11 +96,7 @@ export default class Navbar extends React.Component {
     }
 
 
-    openSearchMenu(event) {
-        this.setState({
-            openSearch:true
-        })
-    }
+
 
 
     render() {
